@@ -3,6 +3,7 @@
 namespace Encore\Admin;
 
 use Closure;
+use Encore\Admin\Controllers\AuthController;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Traits\HasAssets;
 use Encore\Admin\Widgets\Navbar;
@@ -23,7 +24,7 @@ class Admin
      *
      * @var string
      */
-    const VERSION = '1.6.3';
+    const VERSION = '1.6.7';
 
     /**
      * @var Navbar
@@ -209,14 +210,13 @@ class Admin
     {
         $attributes = [
             'prefix'     => config('admin.route.prefix'),
-            'namespace'  => 'Encore\Admin\Controllers',
             'middleware' => config('admin.route.middleware'),
         ];
 
         app('router')->group($attributes, function ($router) {
 
             /* @var \Illuminate\Routing\Router $router */
-            $router->group([], function ($router) {
+            $router->namespace('Encore\Admin\Controllers')->group(function ($router) {
 
                 /* @var \Illuminate\Routing\Router $router */
                 $router->resource('auth/users', 'UserController');
@@ -226,11 +226,14 @@ class Admin
                 $router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']]);
             });
 
-            $router->get('auth/login', 'AuthController@getLogin');
-            $router->post('auth/login', 'AuthController@postLogin');
-            $router->get('auth/logout', 'AuthController@getLogout');
-            $router->get('auth/setting', 'AuthController@getSetting');
-            $router->put('auth/setting', 'AuthController@putSetting');
+            $authController = config('admin.auth.controller', AuthController::class);
+
+            /* @var \Illuminate\Routing\Router $router */
+            $router->get('auth/login', $authController.'@getLogin');
+            $router->post('auth/login', $authController.'@postLogin');
+            $router->get('auth/logout', $authController.'@getLogout');
+            $router->get('auth/setting', $authController.'@getSetting');
+            $router->put('auth/setting', $authController.'@putSetting');
         });
     }
 

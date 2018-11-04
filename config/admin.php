@@ -95,8 +95,13 @@ return [
     | Authentication settings for all admin pages. Include an authentication
     | guard and a user provider setting of authentication driver.
     |
+    | You can specify a controller for `login` `logout` and other auth routes.
+    |
     */
     'auth' => [
+
+        'controller' => App\Admin\Controllers\AuthController::class,
+
         'guards' => [
             'admin' => [
                 'driver'   => 'session',
@@ -214,7 +219,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This value is the skin of admin pages.
-    | @see https://adminlte.io/docs/2.4/skin
+    | @see https://adminlte.io/docs/2.4/layout
     |
     | Supported:
     |    "skin-blue", "skin-blue-light", "skin-yellow", "skin-yellow-light",

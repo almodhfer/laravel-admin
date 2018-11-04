@@ -1,14 +1,14 @@
 <p align="center">
-<a href="http://laravel-admin.org/">
-<img src="http://laravel-admin.org/img/logo004.png" alt="laravel-admin">
+<a href="https://laravel-admin.org/">
+<img src="https://laravel-admin.org/images/logo002.png" alt="laravel-admin">
 </a>
 
 <p align="center">⛵<code>laravel-admin</code> is administrative interface builder for laravel which can help you build CRUD backends just with few lines of code.</p>
 
 <p align="center">
-<a href="http://laravel-admin.org/docs">Documentation</a> |
-<a href="http://laravel-admin.org/docs/#/zh/">中文文档</a> |
-<a href="http://demo.laravel-admin.org">Demo</a> |
+<a href="https://laravel-admin.org/docs">Documentation</a> |
+<a href="https://laravel-admin.org/docs/zh">中文文档</a> |
+<a href="https://demo.laravel-admin.org">Demo</a> |
 <a href="https://github.com/z-song/demo.laravel-admin.org">Demo source code</a> |
 <a href="#extensions">Extensions</a>
 </p>
@@ -52,7 +52,7 @@ Requirements
 Installation
 ------------
 
-> This package requires PHP 7+ and Laravel 5.5, for old versions please refer to [1.4](http://laravel-admin.org/docs/v1.4/#/)
+> This package requires PHP 7+ and Laravel 5.5, for old versions please refer to [1.4](https://laravel-admin.org/docs/v1.4/#/)
 
 First, install laravel 5.5, and make sure that the database connection settings are correct.
 
@@ -102,6 +102,11 @@ The file `config/admin.php` contains an array of configurations, you can find th
 | [grid-lightbox](https://github.com/laravel-admin-extensions/grid-lightbox) | Turn your grid into a lightbox & gallery          |~1.6 |
 | [daterangepicker](https://github.com/laravel-admin-extensions/daterangepicker) | Integrates daterangepicker into laravel-admin          |~1.6 |
 | [material-ui](https://github.com/laravel-admin-extensions/material-ui) | Material-UI extension for laravel-admin          |~1.6 |
+| [sparkline](https://github.com/laravel-admin-extensions/sparkline) | Integrates jQuery sparkline into laravel-admin          |~1.6 |
+| [chartjs](https://github.com/laravel-admin-extensions/chartjs) | Use Chartjs in laravel-admin          |~1.6 |
+| [simditor](https://github.com/laravel-admin-extensions/simditor) | Integrates simditor full-rich editor into laravel-admin          |~1.6 |
+| [cropper](https://github.com/laravel-admin-extensions/cropper) | A simple jQuery image cropping plugin.          |~1.6 |
+| [composer-viewer](https://github.com/laravel-admin-extensions/composer-viewer) | A web interface of composer packages in laravel.          |~1.6 |
 
 
 ## Contributors
